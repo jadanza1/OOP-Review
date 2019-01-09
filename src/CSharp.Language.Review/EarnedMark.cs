@@ -26,6 +26,11 @@ namespace CSharp.Language.Review
         public double WeightedPercent
         { get { return Percent * Weight / 100; } }
 
+        public EarnedMark(WeightedMark markableItem, int possible, double earned): 
+            this(markableItem.Name, markableItem.Weight,  possible, earned)
+        {
+
+        }
         public EarnedMark(string name, int weight , int possible, double earned) : base(name, weight)
         {
             if (possible <= 0)
