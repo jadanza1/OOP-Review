@@ -34,9 +34,15 @@ namespace CSharp.Language.Review
             Earned = earned;
         }
 
-        //public override string ToString()
-        //{
-        //    return string.Format("{0} ({1})\t - {2}% ({3}/{4}) \ t - W")
-        //}
+        public override string ToString()
+        {
+            return string.Format("{0} ({1})\t - {2}% ({3}/{4}) \t - Weighted Mark {5}%",
+                            Name,
+                            Weight,
+                            Percent,
+                            Earned,
+                            Possible,
+                            WeightedPercent);
+        }
     }
 }
