@@ -48,6 +48,7 @@ namespace CSharp.Language.Review
                             Earned,
                             Possible,
                             WeightedPercent);
+            //Bugs
         }
     }
 }
