@@ -9,7 +9,7 @@ namespace CSharp.Language.Review
         private double _Earned;
         public double Earned
         {
-            get { return Earned; }
+            get { return _Earned; }
             set
             {
                 if (value < 0 || value > Possible)
