@@ -38,14 +38,14 @@ namespace CSharp.Language.Review
 
         public override string ToString()
         {
-            return string.Format("{0} ({1})\t - {2}% ({3}/{4}) \t - Weighted Mark {5}%",
+            return string.Format("{0} ({1})\t - {2}% ({3}/{4}) \t-Weighted Mark {5}%",
                             Name,
                             Weight,
                             Percent,
                             Earned,
                             Possible,
                             WeightedPercent);
-            //Bugs
+            //CSharp.Language.Review\bin\Debug > CSharp.Language.Review.exe Bob
         }
     }
 }
