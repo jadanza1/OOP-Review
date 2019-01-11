@@ -1,17 +1,32 @@
-﻿using System;
+﻿//using = identifies the namespaces containing the datatypes that we want to use 
+//(or reference) in the code in this file.
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+//namespace = Declares an "area" or named-space in which we can
+// place our programmer-defined data types
 namespace CSharp.Language.Review
 {
+    //The namespace plus the class name is what's called a 
+    // "fully-qualified" class name.
+    // The fully-quallified class name for Program is 
+    //      CSharp.Language.Review.Program
     public class Program
     {
-        private static Random rnd = new Random();
+        //A static field 
+        //Format of a static field : -accessModifier- -static- -dataType- -FieldName- = expression;
+        // example below:
+        private static Random rnd = new Random();       //this is a static field initialized o a new Random Object
 
+        //Main() is the entry point
         public static void Main(string[] args)
         {
+            //The body of the Main() method 
+            //acts as the "driver" of my application.
             Program app = new Program(args);
             app.AssignMarks(30, 80);
             foreach (Student person in app.Students)
@@ -22,14 +37,23 @@ namespace CSharp.Language.Review
             }
         }
 
+        //this field is acting as a "backing store" B
+        // for the students property.
         private List<Student> _students = new List<Student>();
 
+
+        //this property procides "controlled" access to the
+        //data in the backing store (the field).
         public List<Student> Students
         {
             get { return _students; }
             set { _students = value; }
         }
 
+        //This is a constructor
+        // The job of the constructor is to ensure
+        // that all the fields/properties
+        //have "meaningful" values.
         public Program(string[] studentNames)
         {
             WeightedMark[] CourseMarks = new WeightedMark[4];
@@ -47,7 +71,12 @@ namespace CSharp.Language.Review
                 Students.Add(new Student(name, marks));
             }
         }
-
+        /// <summary>
+        /// This assigns a random mark to each student
+        /// in the <see cref="Students"/> property.
+        /// </summary>
+        /// <param name="min">The minimum possible earned value for the student's mark</param>
+        /// <param name="max">The maximum possible earned value for the student's mark</param>
         public void AssignMarks(int min, int max)
         {
             foreach (Student person in Students)

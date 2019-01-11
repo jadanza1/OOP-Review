@@ -1,9 +1,12 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
+
 
 namespace CSharp.Language.Review
 {
     public class EarnedMark : WeightedMark
+
     {
         public int Possible { get; private set; }
         private double _Earned;
