@@ -25,6 +25,11 @@ namespace CSharp.Language.Review
         //Main() is the entry point
         public static void Main(string[] args)
         {
+            Student topStudent = new Student("Dan Gilleland", null);
+            Student secondBestStudent = new Student("Don Welch", null);
+            // new ... will tell the operating system to allocate enough memory for a Student Object 
+            // , run the appropriate constructor and return the memory address of the newly created object
+
             //The body of the Main() method 
             //acts as the "driver" of my application.
             Program app = new Program(args);
